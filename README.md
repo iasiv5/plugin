@@ -17,8 +17,7 @@
 
 ```text
 .
-├── .plugin/
-│   └── plugin.json
+├── plugin.json
 ├── agents/
 │   └── story-generator.agent.md
 ├── commands/
@@ -29,7 +28,9 @@
 ├── instructions/
 │   └── python-cli-scripts.instructions.md
 ├── .github/
-│   └── copilot-instructions.md
+│   ├── copilot-instructions.md
+│   └── plugin/
+│       └── marketplace.json
 └── skills/
     └── code-review/
         ├── SKILL.md
@@ -38,9 +39,10 @@
 
 ## 为什么先做成这个形态
 
-- 目录采用插件常见分层：`.plugin/`、`commands/`、`hooks/`、`skills/`。
-- 本仓库按“单插件仓库”使用，不包含 marketplace 索引文件。
-- 这样可以保证通过远程插件源安装时，能力文件路径稳定且便于后续扩展。
+- 目录采用插件常见分层：`agents/`、`commands/`、`hooks/`、`skills/`。
+- 根目录 `plugin.json` 用于“从源安装”场景。
+- `.github/plugin/marketplace.json` 用于“按 marketplace 仓库安装”场景。
+- 两种方式并存，可以减少不同安装入口下的兼容性问题。
 
 ## 安装方式
 
@@ -49,6 +51,15 @@
 1. 在 VS Code 中启用 `chat.plugins.enabled`。
 2. 执行命令 `Chat: Install Plugin From Source`。
 3. 输入仓库地址：`https://github.com/iasiv5/plugin`。
+
+### 作为 Marketplace 仓库使用
+
+如果你在其他仓库里通过 marketplace 方式添加 `iasiv5/plugin`，会读取 `.github/plugin/marketplace.json`。
+
+如果出现“在 iasiv5/plugin 中找不到插件，这似乎不是有效的插件市场”，通常是以下原因之一：
+
+1. 本地缓存仍是旧版本，尚未拉到最新提交。
+2. 输入了 marketplace 名称但没有继续选择/安装其中的 `iasi-plugin`。
 
 ## 使用方式
 
@@ -59,7 +70,7 @@
 ## 当前边界
 
 - 已包含：1 个 custom agent、1 个 skill、1 组 hook（session-logger）、1 个 command prompt、1 条 path-specific instruction。
-- 未包含：MCP server、marketplace 配置。
+- 未包含：MCP server。
 - 未包含：任何依赖本地绝对路径的安装逻辑。
 
 ## 后续建议

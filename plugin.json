@@ -1,0 +1,20 @@
+{
+  "name": "iasi-plugin",
+  "description": "GitHub Copilot plugin with story-generator agent, code-review skill, hooks, and reusable prompts",
+  "version": "1.0.5",
+  "author": {
+    "name": "iasiv5"
+  },
+  "license": "MIT",
+  "keywords": [
+    "copilot-plugin",
+    "story-generator",
+    "code-review",
+    "hooks",
+    "prompt"
+  ],
+  "agents": "agents/",
+  "commands": "commands/",
+  "skills": "skills/",
+  "hooks": "hooks/hooks.json"
+}
