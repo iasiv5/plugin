@@ -1,5 +1,5 @@
 {
   "name": "iasi-plugin",
-  "version": "1.0.3",
-  "description": "Plugin with code-review skill, session-logger hooks, and commit message command"
+  "version": "1.0.4",
+  "description": "Plugin with story-generator agent, code-review skill, session-logger hooks, and commit message command"
 }

@@ -4,6 +4,7 @@
 
 当前版本包含以下可复用资产：
 
+- `story-generator` custom agent
 - `code-review` skill
 - `session-logger` hook
 - `create-git-commit-message-IEC` command prompt
@@ -18,6 +19,8 @@
 .
 ├── .plugin/
 │   └── plugin.json
+├── agents/
+│   └── story-generator.agent.md
 ├── commands/
 │   └── create-git-commit-message-IEC.prompt.md
 ├── hooks/
@@ -55,8 +58,8 @@
 
 ## 当前边界
 
-- 已包含：1 个 skill、1 组 hook（session-logger）、1 个 command prompt、1 条 path-specific instruction。
-- 未包含：自定义 agent、MCP server、marketplace 配置。
+- 已包含：1 个 custom agent、1 个 skill、1 组 hook（session-logger）、1 个 command prompt、1 条 path-specific instruction。
+- 未包含：MCP server、marketplace 配置。
 - 未包含：任何依赖本地绝对路径的安装逻辑。
 
 ## 后续建议
