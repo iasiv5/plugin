@@ -1,7 +1,7 @@
 {
   "name": "iasi-plugin",
-  "description": "GitHub Copilot plugin with code-review skill and session-logger hooks",
-  "version": "1.0.1",
+  "description": "GitHub Copilot plugin with code-review skill, session-logger hooks, and commit message prompt",
+  "version": "1.0.2",
   "author": {
     "name": "iasiv5"
   },
@@ -9,7 +9,12 @@
   "keywords": [
     "code-review",
     "hooks",
-    "session-logger"
+    "session-logger",
+    "prompt",
+    "instructions"
+  ],
+  "commands": [
+    "prompts/create-git-commit-message-IEC.prompt.md"
   ],
   "skills": [
     "skills/"

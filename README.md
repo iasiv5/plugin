@@ -1,4 +1,4 @@
-# iasi plugin
+# iasi test plugin
 
 这是一个最小可用的 GitHub Copilot plugin 仓库。
 
