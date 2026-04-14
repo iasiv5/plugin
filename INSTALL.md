@@ -7,21 +7,9 @@
 
 ## 方式一：从 GitHub 源安装
 
-1. 将当前 `plugin/` 目录单独上传为一个 GitHub 仓库。
-2. 在 VS Code 命令面板执行 `Chat: Install Plugin From Source`。
-3. 输入该 GitHub 仓库 URL，完成安装。
-
-## 方式二：本地路径启用（调试）
-
-在 `settings.json` 增加：
-
-```json
-{
-  "chat.pluginLocations": {
-    "d:/git-repo/ai-workspace-assets/plugin": true
-  }
-}
-```
+1. 在 VS Code 命令面板执行 `Chat: Install Plugin From Source`。
+2. 输入仓库地址 `https://github.com/iasiv5/plugin`。
+3. 完成安装后重新打开一个 Copilot Chat 会话。
 
 ## 验证
 
