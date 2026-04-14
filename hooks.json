@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": ".github/hooks/session-logger/log-session-start.sh",
+        "windows": "bash .github/hooks/session-logger/log-session-start.sh",
+        "cwd": ".",
+        "env": {
+          "LANG": "C.UTF-8",
+          "LC_CTYPE": "C.UTF-8"
+        },
+        "timeout": 15
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": ".github/hooks/session-logger/log-session-end.sh",
+        "windows": "bash .github/hooks/session-logger/log-session-end.sh",
+        "cwd": ".",
+        "env": {
+          "LANG": "C.UTF-8",
+          "LC_CTYPE": "C.UTF-8"
+        },
+        "timeout": 15
+      },
+      {
+        "type": "command",
+        "command": ".github/hooks/session-logger/log-agent-response.sh",
+        "windows": "bash .github/hooks/session-logger/log-agent-response.sh",
+        "cwd": ".",
+        "env": {
+          "LOG_LEVEL": "INFO",
+          "LANG": "C.UTF-8",
+          "LC_CTYPE": "C.UTF-8"
+        },
+        "timeout": 15
+      },
+      {
+        "type": "command",
+        "command": ".github/hooks/session-logger/reconcile-session-logs.sh",
+        "windows": "bash .github/hooks/session-logger/reconcile-session-logs.sh",
+        "cwd": ".",
+        "env": {
+          "LOG_LEVEL": "INFO",
+          "LANG": "C.UTF-8",
+          "LC_CTYPE": "C.UTF-8"
+        },
+        "timeout": 15
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "type": "command",
+        "command": ".github/hooks/session-logger/log-prompt.sh",
+        "windows": "bash .github/hooks/session-logger/log-prompt.sh",
+        "cwd": ".",
+        "env": {
+          "LOG_LEVEL": "INFO",
+          "LANG": "C.UTF-8",
+          "LC_CTYPE": "C.UTF-8"
+        },
+        "timeout": 15
+      }
+    ]
+  }
+}
